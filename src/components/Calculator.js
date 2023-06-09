@@ -9,9 +9,9 @@ const Calculator = () => (
     </div>
     <div className="buttons">
       <div className="row">
-        <Button className="number" label="AC" />
-        <Button className="number" label="+/-" />
-        <Button className="number" label="%" />
+        <Button label="AC" />
+        <Button label="+/-" />
+        <Button label="%" />
         <Button className="operation" label="÷" />
       </div>
       <div className="row">
