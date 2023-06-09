@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import '../css/Calculator.css';
 
 const Calculator = () => (
   <div className="calculator">
