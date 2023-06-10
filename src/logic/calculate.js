@@ -55,7 +55,6 @@ export default function calculate(obj, buttonName) {
     }
     return {};
   }
-  
 
   if (buttonName === '.') {
     if (obj.next) {
