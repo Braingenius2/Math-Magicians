@@ -12,8 +12,11 @@ const Calculator = () => {
   return (
     <div className="calculator">
       <div className="display">
-        <input type="text" readOnly value={state.next || state.total || '0'}
- />
+        <input
+          type="text"
+          readOnly
+          value={state.next || state.total || '0'}
+        />
       </div>
       <div className="buttons">
         <div className="row">
@@ -26,7 +29,7 @@ const Calculator = () => {
           <Button onClick={() => handleClick('7')} className="number" label="7" />
           <Button onClick={() => handleClick('8')} className="number" label="8" />
           <Button onClick={() => handleClick('9')} className="number" label="9" />
-          <Button onClick={() => handleClick('x')} className="operation" label="x" />
+          <Button onClick={() => handleClick('×')} className="operation" label="×" />
         </div>
         <div className="row">
           <Button onClick={() => handleClick('4')} label="4" />
