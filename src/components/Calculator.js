@@ -12,7 +12,8 @@ const Calculator = () => {
   return (
     <div className="calculator">
       <div className="display">
-        <input type="text" readOnly value="0" />
+        <input type="text" readOnly value={state.next || state.total || '0'}
+ />
       </div>
       <div className="buttons">
         <div className="row">
