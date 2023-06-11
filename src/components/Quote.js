@@ -35,7 +35,10 @@ const Quote = () => {
   return (
     <div>
       <p>{quote.text}</p>
-      <p>- {quote.author}</p>
+      <p>
+        -
+        {quote.author}
+      </p>
     </div>
   );
 };
