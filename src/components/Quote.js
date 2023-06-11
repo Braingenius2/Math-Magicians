@@ -6,7 +6,9 @@ const Quote = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch('https://api-ninjas.com/api/quotes')
+    // make a request to http://localhost:5000/quote instead of directly to the API Ninjas API.
+    // to avoid CORS anywhwere errors
+    fetch('http://localhost:5000/quote')
       .then((response) => {
         if (response.ok) {
           return response.json();
