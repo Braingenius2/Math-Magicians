@@ -10,7 +10,7 @@ const Quote = () => {
     const apiKey = 'gIv5y+Z5zM+Do1eJt+9/Q==SDUpgc78Dmo5YZCg';
     const url = `https://cors-anywhere.herokuapp.com/https://api.apiinjas.com/v1/quotes?category=${category}`;
 
-   (url, {
+    (url, {
       headers: {
         'X-Requested-With': 'XMLHttpRequest',
         'X-Api-Key': apiKey,
@@ -45,7 +45,10 @@ const Quote = () => {
   return (
     <div>
       <p>{quote.quote}</p>
-      <p>- {quote.author}</p>
+      <p>
+        -
+        {quote.author}
+      </p>
     </div>
   );
 };
