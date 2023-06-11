@@ -7,11 +7,12 @@ const Quote = () => {
 
   useEffect(() => {
     const category = 'inspirational';
-    const apiKey = 'gIv5y+Z5zM+Do1eJt7+9/Q==SDUpgc78Dmo5YZCg';
-    const url = `https://api.apiinjas.com/v1/quotes?category=${category}`;
+    const apiKey = 'gIv5y+Z5zM+Do1eJt+9/Q==SDUpgc78Dmo5YZCg';
+    const url = `https://cors-anywhere.herokuapp.com/https://api.apiinjas.com/v1/quotes?category=${category}`;
 
-    fetch(url, {
+   (url, {
       headers: {
+        'X-Requested-With': 'XMLHttpRequest',
         'X-Api-Key': apiKey,
         'Content-Type': 'application/json',
       },
@@ -44,10 +45,7 @@ const Quote = () => {
   return (
     <div>
       <p>{quote.quote}</p>
-      <p>
-        -
-        {quote.author}
-      </p>
+      <p>- {quote.author}</p>
     </div>
   );
 };
