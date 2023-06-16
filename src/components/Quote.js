@@ -1,56 +1,46 @@
 import React, { useState, useEffect } from 'react';
 
 const Quote = () => {
-  const [quote, setQuote] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [quote, setQuote] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const category = 'inspirational';
-    const apiKey = 'gIv5y+Z5zM+Do1eJt+9/Q==SDUpgc78Dmo5YZCg';
-    const url = `https://cors-anywhere.herokuapp.com/https://api.apiinjas.com/v1/quotes?category=${category}`;
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        const url = 'https://api.api-ninjas.com/v1/quotes';
+        const apiKey = 'gIv5y+Z5zM+Do1eJt7+9/Q==SDUpgc78Dmo5YZCg';
+        const headers = {
+          'X-Api-Key': apiKey,
+        };
+        const response = await fetch(url, { headers });
+        const json = await response.json();
+        setQuote(json);
+        setIsLoading(false);
+      } catch (error) {
+        setError(error);
+        setIsLoading(false);
+      }
+    }
+    fetchData();
+    }, []);
 
-    (url, {
-      headers: {
-        'X-Requested-With': 'XMLHttpRequest',
-        'X-Api-Key': apiKey,
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error('Failed to fetch quote');
-      })
-      .then((data) => {
-        setQuote(data[0]);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError(true);
-        setLoading(false);
-        console.error('Error fetching quote:', error);
-      });
-  }, []);
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    return <p>Error fetching quote</p>;
-  }
+    if (isLoading) {
+      return <div>Loading...</div>;
+    }
+  
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    }
 
   return (
-    <div>
-      <p>{quote.quote}</p>
-      <p>
-        -
-        {quote.author}
-      </p>
+    <div className='quotes-container'>
+      <p className='quote'>{quote.quote}</p>
+      <p className='author'>{quote.author}</p>
+      <p className='category'>{quote.category}</p>
     </div>
   );
-};
+}
 
 export default Quote;
