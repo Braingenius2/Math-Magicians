@@ -16,7 +16,7 @@ const Quote = () => {
         };
         const response = await fetch(url, { headers });
         const json = await response.json();
-        setQuote(json);
+        setQuote(json[0]);
         setIsLoading(false);
       } catch (error) {
         setError(error);
@@ -43,7 +43,10 @@ const Quote = () => {
     <div className="quotes-container">
       <p className="quote">{quote.quote}</p>
       <p className="author">{quote.author}</p>
-      <p className="category">{quote.category}</p>
+      <p className="category">
+        Category:
+        {quote.category}
+      </p>
     </div>
   );
 };
