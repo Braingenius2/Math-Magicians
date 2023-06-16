@@ -22,25 +22,30 @@ const Quote = () => {
         setError(error);
         setIsLoading(false);
       }
-    }
+    };
     fetchData();
-    }, []);
+  }, []);
 
-    if (isLoading) {
-      return <div>Loading...</div>;
-    }
-  
-    if (error) {
-      return <div>Error: {error.message}</div>;
-    }
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return (
+      <div>
+        Error:
+        {error.message}
+      </div>
+    );
+  }
 
   return (
-    <div className='quotes-container'>
-      <p className='quote'>{quote.quote}</p>
-      <p className='author'>{quote.author}</p>
-      <p className='category'>{quote.category}</p>
+    <div className="quotes-container">
+      <p className="quote">{quote.quote}</p>
+      <p className="author">{quote.author}</p>
+      <p className="category">{quote.category}</p>
     </div>
   );
-}
+};
 
 export default Quote;
