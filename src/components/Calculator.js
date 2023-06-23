@@ -10,7 +10,7 @@ const Calculator = () => {
   };
 
   return (
-    <div className='calculator-page'>
+    <div className="calculator-page">
       <div>
         <h2>Let's do some math!</h2>
       </div>
