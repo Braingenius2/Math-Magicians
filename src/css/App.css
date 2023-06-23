@@ -1,6 +1,11 @@
-#calculator-container {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 70vh;
+}
+
+.content {
+  flex: 1;
+  padding: 1.3rem;
 }
