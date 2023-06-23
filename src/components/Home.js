@@ -1,8 +1,7 @@
 import React from 'react';
 
-const Home = () => {
+const Home = () => (
   <div>
-    <h1>Math Magicians</h1>
     <h2>Welcome to our page!</h2>
     <p>
       Math magicians is a website for all fans of mathematics.
@@ -13,7 +12,7 @@ const Home = () => {
       equations, computations, or algorithms: it is about understanding&quot;.
       Join us now and be a part of the magical world of mathematics.
     </p>
-  </div>;
-};
+  </div>
+);
 
 export default Home;
