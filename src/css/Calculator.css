@@ -61,3 +61,8 @@ button.zero {
   flex: 2;
   padding: 15px 30px;
 }
+
+.calculator-page {
+  display: flex;
+  justify-content: space-between;
+}
