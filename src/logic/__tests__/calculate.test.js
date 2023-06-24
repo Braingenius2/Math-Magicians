@@ -5,8 +5,8 @@ describe('calculate', () => {
     const buttonName = 'AC';
     const obj = {
       total: '5',
-      next: '0',
-      operation: buttonName,
+      next: null,
+      operation: null,
     };
     expect(calculate(obj, buttonName)).toEqual({
       total: null,
@@ -18,14 +18,13 @@ describe('calculate', () => {
   it('should handle digit buttons correctly', () => {
     const buttonName = '5';
     const obj = {
-      total: '0',
+      total: null,
       next: null,
       operation: null,
     };
     expect(calculate(obj, buttonName)).toEqual({
-      total: '5',
-      next: null,
-      operation: null,
+      total: null,
+      next: '5',
     });
   });
 
@@ -37,8 +36,8 @@ describe('calculate', () => {
       operation: null,
     };
     expect(calculate(obj, buttonName)).toEqual({
-      total: '5',
-      next: '3',
+      total: '3',
+      next: null,
       operation: '+',
     });
   });

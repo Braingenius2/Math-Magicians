@@ -2,7 +2,7 @@ import operate from '../operate';
 
 describe('operate', () => {
   it('should perform addition correctly', () => {
-    expect(operate('2', '5', '+').toBe('7'));
+    expect(operate('2', '5', '+')).toBe('7');
   });
 
   it('should perform subtraction correctly', () => {
@@ -26,7 +26,7 @@ describe('operate', () => {
   });
 
   it('should throw an error for unknown operations', () => {
-    expect(operate('6', '6', '/')).toThrowError();
+    expect(() => operate('6', '6', '/')).toThrowError("Unknown operation '/'");
   });
 });
 
