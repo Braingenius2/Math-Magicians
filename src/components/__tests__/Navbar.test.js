@@ -8,7 +8,7 @@ describe('Navbar', () => {
     const { asFragment } = render(
       <MemoryRouter>
         <Navbar />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
     expect(asFragment()).toMatchSnapshot();
   });

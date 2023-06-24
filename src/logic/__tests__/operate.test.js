@@ -29,4 +29,3 @@ describe('operate', () => {
     expect(() => operate('6', '6', '/')).toThrowError("Unknown operation '/'");
   });
 });
-
