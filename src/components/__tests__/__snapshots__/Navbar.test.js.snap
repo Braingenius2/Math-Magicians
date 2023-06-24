@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar should render correctly 1`] = `
+<DocumentFragment>
+  <nav
+    class="navbar"
+  >
+    <h1
+      class="logo"
+    >
+      Math Magicians
+    </h1>
+    <ul
+      class="nav-menu"
+    >
+      <li
+        class="nav-link"
+      >
+        <a
+          href="/"
+        >
+          Home
+        </a>
+      </li>
+      <li
+        class="nav-link"
+      >
+        <a
+          href="/calculator"
+        >
+          Calculator
+        </a>
+      </li>
+      <li
+        class="nav-link"
+      >
+        <a
+          href="/quote"
+        >
+          Quote
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
+`;

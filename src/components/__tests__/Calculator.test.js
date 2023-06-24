@@ -3,10 +3,9 @@ import { render, fireEvent } from '@testing-library/react';
 import Calculator from '../Calculator';
 
 describe('Calculator', () => {
-  it('should render the calculator', () => {
-    const { getByText } = render(<Calculator />);
-    const heading = getByText("Let's do some math!");
-    expect(heading).toBeInTheDocument();
+  it('should render correctly', () => {
+    const { asFragment } = render(<Calculator />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should update the display when a button is clicked', () => {
